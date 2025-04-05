@@ -1,0 +1,201 @@
+#testimonials {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.testimonial {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.client-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.client-info div h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.client-info div span {
+  font-size: 14px;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination .prev-btn,
+.pagination .next-btn {
+  font-size: 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination .prev-btn:hover,
+.pagination .next-btn:hover {
+  background-color: #0056b3;
+}
+
+.pagination .prev-btn:active,
+.pagination .next-btn:active {
+  transform: scale(0.9);
+}
+
+.pagination .page-number {
+  font-size: 16px;
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .testimonial {
+    width: 90%;
+    max-width: none;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pagination .prev-btn,
+  .pagination .next-btn {
+    font-size: 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .pagination .prev-btn:hover,
+  .pagination .next-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .pagination .prev-btn:active,
+  .pagination .next-btn:active {
+    transform: scale(0.9);
+  }
+
+  .pagination .page-number {
+    font-size: 16px;
+    color: #007bff;
+  }
+
+  .client-info img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .client-info div h4 {
+    font-size: 16px;
+  }
+
+  .client-info div span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pagination .prev-btn,
+  .pagination .next-btn {
+    padding: 10px;
+    font-size: 28px;
+  }
+
+  .pagination .page-number {
+    font-size: 12px;
+  }
+
+  .client-info img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .client-info div h4 {
+    font-size: 14px;
+  }
+
+  .client-info div span {
+    font-size: 10px;
+  }
+}
